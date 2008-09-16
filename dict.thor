@@ -13,6 +13,12 @@ class Dict < Thor
     random_from_file_handle(File.popen("grep #{str}$ #{DICT}"))
   end
 
+  desc 'random_starts_with STR', "Print a random dictionary word that starts with specific string"
+  method_options :length=>:optional,  :maxlength=>:optional
+  def random_starts_with(str)
+    random_from_file_handle(File.popen("grep ^#{str} #{DICT}"))
+  end
+
   def random_from_file_handle(dict_f)
     length = options[:length].to_i
     maxlength = options[:maxlength].to_i
