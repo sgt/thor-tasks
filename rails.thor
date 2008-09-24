@@ -9,8 +9,8 @@ class Rails < Thor
 
   desc 'redeploy', 'deploy and restart'
   def redeploy
-    system "cap deploy"
-    system "cap deploy:stop"
-    system "cap deploy:start"
+    system "cap", "deploy"
+    system "cap", "deploy:stop"
+    system "cap", "deploy:start"
   end
 end
