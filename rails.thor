@@ -3,7 +3,7 @@ require 'git'
 class Rails < Thor
   desc 'commit_deploy MSG', 'Commit changes, push and deploy'
   def commit_deploy(msg)
-    Git.push_changes(msg)
+    Git.new.push_changes(msg)
     redeploy
   end
 
