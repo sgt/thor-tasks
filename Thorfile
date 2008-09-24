@@ -1,6 +1,6 @@
  class Default < Thor
   
-  THOR_TASKS = %w(dict git)
+  THOR_TASKS = %w(dict rails)
   
   desc "install", "Installs the thor-git tasks"
   def install
