@@ -1,9 +1,9 @@
-load 'git.thor'
-
 class Rails < Thor
   desc 'commit_deploy MSG', 'Commit changes, push and deploy'
   def commit_deploy(msg)
-    Git.new.push_changes(msg)
+    system "git", "add", "."
+    system "git", "commit", "-m", msg
+    system "git", "push"
     redeploy
   end
 
