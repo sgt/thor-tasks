@@ -3,6 +3,7 @@ class Rails < Thor
   def commit_deploy(msg)
     system "git add ."
     system "git commit -m ", msg
+    system "git push"
     system "cap deploy"
     system "cap deploy:stop"
     system "cap deploy:start"
