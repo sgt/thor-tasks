@@ -1,4 +1,4 @@
-require 'git'
+load 'git.thor'
 
 class Rails < Thor
   desc 'commit_deploy MSG', 'Commit changes, push and deploy'
